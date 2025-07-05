@@ -4,6 +4,8 @@ accessible field net/minecraft/client/sounds/SoundManager soundEngine Lnet/minec
 
 accessible field net/minecraft/client/sounds/SoundEngine library Lcom/mojang/blaze3d/audio/Library;
 
+accessible class com/mojang/blaze3d/audio/Library$ChannelPool
+
 accessible field com/mojang/blaze3d/audio/Library streamingChannels Lcom/mojang/blaze3d/audio/Library$ChannelPool;
 
 accessible class com/mojang/blaze3d/audio/Library$CountingChannelPool

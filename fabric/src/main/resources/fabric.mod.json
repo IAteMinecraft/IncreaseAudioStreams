@@ -9,12 +9,15 @@
 	],
 	"license": "MIT",
 	"icon": "assets/increase_audio_streams/icon.png",
-	"environment": "server",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"net.IAteMinecraft.increaseaudiostreams.IncreaseAudioStreams"
 		]
 	},
+	"mixins": [
+		"increase_audio_streams.mixin.json"
+	],
 	"accessWidener": "increase_audio_streams.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.16.14",
