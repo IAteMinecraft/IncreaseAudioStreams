@@ -61,6 +61,22 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${inputs.properties.archivesName}"}
 	}
+
+	archiveClassifier.set("fabric")
+}
+
+tasks.named('assemble').configure {
+	doLast {
+		def jarTask = tasks.named('jar').get()
+		def jarFile = jarTask.hasProperty('archiveFile') ? jarTask.archiveFile.get().asFile : jarTask.archivePath
+		def destinationDir = rootProject.rootDir.toPath().resolveSibling("bin").toFile()
+		destinationDir.mkdirs()
+		copy {
+			from jarFile
+			into destinationDir
+		}
+		println "Copied ${jarFile.name} to ${destinationDir}"
+	}
 }
 
 // configure the maven publication

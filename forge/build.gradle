@@ -1,3 +1,5 @@
+import org.gradle.language.assembler.tasks.Assemble
+
 plugins {
     id 'eclipse'
     id 'idea'
@@ -192,6 +194,22 @@ tasks.named('jar', Jar).configure {
 
     // This is the preferred method to reobfuscate your jar file
     finalizedBy 'reobfJar'
+
+    archiveClassifier.set("forge")
+}
+
+tasks.named('assemble').configure {
+    doLast {
+        def jarTask = tasks.named('jar').get()
+        def jarFile = jarTask.hasProperty('archiveFile') ? jarTask.archiveFile.get().asFile : jarTask.archivePath
+        def destinationDir = rootProject.rootDir.toPath().resolveSibling("bin").toFile()
+        destinationDir.mkdirs()
+        copy {
+            from jarFile
+            into destinationDir
+        }
+        println "Copied ${jarFile.name} to ${destinationDir}"
+    }
 }
 
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing:
