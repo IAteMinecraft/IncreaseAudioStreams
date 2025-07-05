@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "increase_audio_streams",
+	"version": "${version}",
+	"name": "Increase Audio Streams",
+	"description": "Increases the amount of audio streams form 8 to 32",
+	"authors": [
+		"I Ate Minecraft"
+	],
+	"license": "MIT",
+	"icon": "assets/increase_audio_streams/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"net.IAteMinecraft.increaseaudiostreams.IncreaseAudioStreams"
+		]
+	},
+	"accessWidener": "increase_audio_streams.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.20.1",
+		"java": ">=17"
+	}
+}
