@@ -3,7 +3,7 @@
 	"id": "increase_audio_streams",
 	"version": "${version}",
 	"name": "Increase Audio Streams",
-	"description": "Increases the amount of audio streams form 8 to 32",
+	"description": "Increases the amount of audio streams form 8 to 32 (Default, can be changed in config)",
 	"authors": [
 		"I Ate Minecraft"
 	],

@@ -2,6 +2,7 @@ package net.IAteMinecraft.increaseaudiostreams;
 
 import com.mojang.logging.LogUtils;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -26,6 +27,8 @@ public class IncreaseAudioStreams
     private void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             LOGGER.info("Starting to increase Streams...");
+
+            MidnightConfig.init(MODID, IASConfig.class);
         });
     }
 }

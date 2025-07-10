@@ -2,7 +2,7 @@
   "required": true,
   "package": "net.IAteMinecraft.increaseaudiostreams.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "modid.refmap.json",
+  "refmap": "increase_audio_streams.refmap.json",
   "mixins": [
   ],
   "client": [

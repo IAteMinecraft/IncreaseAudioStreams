@@ -1,5 +1,6 @@
 package net.IAteMinecraft.increaseaudiostreams;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ClientModInitializer;
 
 import org.slf4j.Logger;
@@ -20,5 +21,6 @@ public class IncreaseAudioStreams implements ClientModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Starting to increase Streams...");
+		MidnightConfig.init(MOD_ID, IASConfig.class);
 	}
 }
